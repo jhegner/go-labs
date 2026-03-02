@@ -15,7 +15,11 @@ type Feed struct {
 }
 
 // Recupera os feeds de leitura e processa o arquivo de dados de feed
-func RetrieveFeeds() ([]*Feed, error) {
+
+// O primeiro valor de retorno []*Feed é uma fatia de ponteiros para valores do tipo Feed
+// O segundo valor de retorno error é um valor de erro que indica se a chamada da função foi bem-sucedida.
+func RetrieveFeeds() ([]*Feed, error) { 
+
 	// Abre o arquivo
 	file, err := os.Open(dataFile)
 	if err != nil {
